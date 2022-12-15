@@ -82,3 +82,8 @@ class="btn btn-sm btn-success"><i class="fa fa-trash"></i> Hapus</a>
 <!-- End of Main Content -->
 
 
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

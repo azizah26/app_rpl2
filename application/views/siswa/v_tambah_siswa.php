@@ -108,31 +108,14 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
       <button type="submit" class="btnkirim">Kirim</button>
 
+
+
+
     </div>
-
-    </div>
-  </form>
-</div>
-</body>
-</html>
+</form>
 
 
 
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
-    modal.style.display = "none";
-}
-}
-</script>
-</div>
-</div>
-</div>
 
 </div>
 <!-- /.container-fluid -->
