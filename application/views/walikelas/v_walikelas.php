@@ -50,6 +50,7 @@
 <th>Kelas</th>
 <th>Guru</th>
 <th>semester</th>
+<th>tapel</th>
 <th>Opsi</th>
 </tr>
 </thead>
@@ -61,9 +62,10 @@ foreach ($walikelas as $u){
 ?>
 <tr>
 <td><?php echo $no++?></td>
-<td><?php echo $u->nama_kelas ?></td>
-<td><?php echo $u->nama_guru ?></td>
+<td><?php echo $u->id_kelas ?></td>
+<td><?php echo $u->id_guru ?></td>
 <td><?php echo $u->semester ?></td>
+
 <td>
 <a href="<?php echo base_url().'index.php/walikelas/edit/'.$u->id; ?>" 
 class="btn btn-sm btn-warning"><i class="fas fa-user-edit"></i> Edit</a>

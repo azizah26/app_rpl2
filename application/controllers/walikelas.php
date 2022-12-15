@@ -37,11 +37,14 @@ function tambah(){
         $id_kelas = $this->input->post('id_kelas');
         $id_guru = $this->input->post('id_guru');
         $semester = $this->input->post('semester');
+        $tapel = $this->input->post('tapel');
+
         $data = array(
         'id' => $id,
         'id_kelas' => $id_kelas,
         'id_guru' => $id_guru,
-        'semester' => $semester
+        'semester' => $semester,
+        'tapel' => $tapel
         );
         $this->M_guru->insert_data($data,'guru');
         redirect('index.php/walikelas');

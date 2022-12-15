@@ -5,9 +5,9 @@
 class M_guru extends CI_Model{
 // FUNGSI CRUD
 // fungsi untuk mengambil data dari database
-function get_data($table){
-return $this->db->get($table);
-}
+function get_data(){
+    return $this->db->get('guru');
+    }
 // fungsi untuk menginput data ke database
 function insert_data($data,$table){
 $this->db->insert($table,$data);

@@ -13,7 +13,7 @@
 
 <div class="form-group">
  <label class="font-weight-bold" for="nama">Kelas</label>
- <select class="form-control" name="id_kelas" aria-label="Default select example">
+ <select class="form-control" name="id_kelas" id="id_kelas"aria-label="Default select example">
   <option selected>Pilih Tingkat </option>
   <?php foreach ($kelas as $j) {
       echo '<option value="' . $j->id_kelas . '">' . $j->nama_kelas . '</option>';
@@ -23,7 +23,7 @@
 
  <div class="form-group">
  <label class="font-weight-bold" for="nama">Nama Guru</label>
- <select class="form-control" name="id_guru" aria-label="Default select example">
+ <select class="form-control" name="id_guru" id="id_guru" aria-label="Default select example">
   <option selected>Pilih Guru</option>
   <?php foreach ($guru as $j) {
       echo '<option value="' . $j->id_guru . '">' . $j->nama_guru . '</option>';
