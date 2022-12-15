@@ -30,10 +30,29 @@ href="http://localhost/app_rpltwo/assets/css/input.css">
         <input type="text" id="nama_ekskul"  placeholder="masukkan sesuai data anda" class="form-control" name="nama_ekskul" required><br>
 
      
-        
+      
         <button type="submit" class="btnkirim">Kirim</button>
-    </div>
-  </form>
+
+
+
+
 </div>
+</form>
+
+
+
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
 </body>
 </html>

@@ -34,10 +34,29 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
         <input type="text" id="nama_mapel"  placeholder="masukkan sesuai data anda" class="form-control" name="nama_mapel" required><br>
 
      
-        
-        <button type="submit" class="btnkirim">Kirim</button>
-    </div>
-  </form>
+       
+      <button type="submit" class="btnkirim">Kirim</button>
+
+
+
+
 </div>
+</form>
+
+
+
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
 </body>
 </html>

@@ -18,7 +18,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
   <form class="modal-content animate" action="<?php echo base_url(). 'index.php/dudi/dudi_tambah_aksi'; ?>" method="post">
     <div class="imgcontainer">
     <a href=/app_rpltwo/index.php/dudi><span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span></a>
-    <img src="<?=base_url('/assets/img/img_avatar2.png');?>" alt="Avatar" class="avatar">
+    <img src="<?=base_url('/assets/img/ft.png');?>" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -35,10 +35,10 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
       <input type="text" id="no_hp" placeholder="Masukkan Sesuai Data Anda" name="no_hp" required>
       
       <label for="tgl_masuk"><b>Tanggal Masuk</b></label>
-      <input type="date" class="form-control" name="tgl_masuk" required><br>
+      <input type="date" id="tgl_masuk" class="form-control" name="tgl_masuk" required><br>
       
       <label for="tgl_keluar"><b>Tanggal Keluar</b></label>
-      <input type="date" class="form-control" name="tgl_keluar" required><br>
+      <input type="date" id="tgl_keluar" class="form-control" name="tgl_keluar" required><br>
       
       <button type="submit" class="btnkirim">Kirim</button>
    

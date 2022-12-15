@@ -32,9 +32,29 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
         <label for="no_urut"><b>No Urut</b></label>
         <input type="text" id="no_urut" placeholder="masukkan sesuai data anda" class="form-control" name="no_urut" required><br>
 
+      
         <button type="submit" class="btnkirim">Kirim</button>
-    </div>
-  </form>
+
+
+
+
 </div>
+</form>
+
+
+
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
 </body>
 </html>
