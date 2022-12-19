@@ -2,11 +2,11 @@
 // WWW.MALASNGODING.COM | Author : Diki Alfarabi Hadi
 // Model yang terstruktur. agar bisa digunakan berulang kali untuk membuat operasi 
 // Sehingga proses pembuatan CRUD menjadi lebih cepat dan efisien.
-class M_user extends CI_Model{
+class M_nilaiakhir extends CI_Model{
 // FUNGSI CRUD
 // fungsi untuk mengambil data dari database
 function get_data(){
-return $this->db->get('set_user');
+return $this->db->get('Nilai_akhir');
 }
 // fungsi untuk menginput data ke database
 function insert_data($data,$table){
@@ -30,7 +30,7 @@ function cek_login($table,$where){
 }
 // AKHIR FUNGSI CRUD
 }
-function get_data($table){
-    return $this->db->get($table);
-    }
+// function get_data($table){
+//     return $this->db->get($table);
+//     }
 ?>

@@ -43,12 +43,12 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id_user="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
 <th width="1%">No</th>
-<th>Username</th>
-<th>Jabatan</th>
+<th>Nama User</th>
+<th>Level</th>
 <th>Opsi</th>
 </tr>
 </thead>
@@ -60,12 +60,12 @@ foreach ($user as $u){
 ?>
 <tr>
 <td><?php echo $no++?></td>
-<td><?php echo $u->username ?></td>
-<td><?php echo $u->jabatan ?></td>
+<td><?php echo $u->nama_user ?></td>
+<td><?php echo $u->level ?></td>
 <td>
-<a href="<?php echo base_url().'index.php/user/edit/'.$u->id; ?>" 
+<a href="<?php echo base_url().'index.php/user/edit/'.$u->id_user; ?>" 
 class="btn btn-sm btn-warning"><i class="fas fa-user-edit"></i> Edit</a>
-<a href="<?php echo base_url().'index.php/user/hapus/'.$u->id; ?>" 
+<a href="<?php echo base_url().'index.php/user/hapus/'.$u->id_user; ?>" 
 class="btn btn-sm btn-success"><i class="fa fa-trash"></i> Hapus</a>
 </td>
 </tr>
@@ -82,8 +82,3 @@ class="btn btn-sm btn-success"><i class="fa fa-trash"></i> Hapus</a>
 <!-- End of Main Content -->
 
 
-</div>
-<!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->

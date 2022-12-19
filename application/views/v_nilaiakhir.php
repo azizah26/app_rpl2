@@ -16,7 +16,7 @@ include('template/navbar.php');
  <a href="<?php echo base_url().'index.php/Nilai_akhir/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
  <br/>
  <br/>
- <form method="post" action="<?php echo base_url().'index.php/walikelas/tambah_aksi'; ?>">
+ <form method="post" action="<?php echo base_url().'index.php/Nilai_akhir/tambah_aksi'; ?>">
 
  <div class="form-group">
  <label class="font-weight-bold" for="nama">Semester</label>
@@ -128,15 +128,21 @@ $(document).ready(function(){
                 
 				var html = '';
 				var i;
-        html += '<table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>nama_siswa</td><td>Nilai</td></tr></table>';
-				for(i=0; i<data.length; i++){
-// 					html += '<input type="number" class="form-control" name="nilai" 
-//  required="required" value="">';
-//           html += '<option value='+data[i].kd_mapel+'>'+data[i].nama_mapel+'</option>';
+				var no =1;
 
-				}				
+        html += '<table table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>Nama Siswa</td><td>Nilai</td></tr>';
+
+				for(i=0; i<data.length; i++){
+					html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama+'</td><td><input type="text" class="form-control" name="nilai'+i+'"></td></tr>';
+					html+= '<input type="hidden" class="form-control" name="nis'+i+'" value="'+data[i].nis+'">';
+//           html += '<option value='+data[i].kd_mapel+'>'+data[i].nama_mapel+'</option>';
+no++;
+
+				}
+				html+= '<input type="hidden" class="form-control" name="jumlah" value="'+i+'">';		
+				html +='</table>';		
 				$('#siswa').html(html);
-				$('#kelas').change();
+				// $('#kelas').change();
 			}
 		})
 	return false ;
