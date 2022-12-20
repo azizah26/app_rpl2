@@ -90,7 +90,7 @@
                         <a class="collapse-item" href="<?php echo base_url('index.php/kelas');?>">Nilai Ekskul</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/guru');?>">Nilai Sikap</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/mapel');?>">Nilai Prakerin</a>
-                        <a class="collapse-item" href="<?php echo base_url('index.php/ekskul');?>">Catatan Walikelas</a>
+                        <a class="collapse-item" href="<?php echo base_url('index.php/catatan_walikelas');?>">Catatan Walikelas</a>
                     </div>
                 </div>
             </li>
