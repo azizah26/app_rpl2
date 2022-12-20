@@ -33,38 +33,36 @@ function tambah(){
     $this->load->view('template/footer');
     }
     function tambah_aksi(){
-        $id = $this->input->post('id');
+        // $id = $this->input->post('id');
         $id_kelas = $this->input->post('id_kelas');
         $id_guru = $this->input->post('id_guru');
         $semester = $this->input->post('semester');
         $tapel = $this->input->post('tapel');
-
         $data = array(
-        'id' => $id,
+        // 'id' => $id,
         'id_kelas' => $id_kelas,
         'id_guru' => $id_guru,
         'semester' => $semester,
         'tapel' => $tapel
         );
-        $this->M_guru->insert_data($data,'guru');
+        $this->M_walikelas->insert_data($data,'walikelas');
         redirect('index.php/walikelas');
         }
 
     function hapus($id){
             $where = array('id' => $id);
-            $this->m_walikelas->delete_data($where,'walikelas');
+            $this->M_walikelas->delete_data($where,'walikelas');
             redirect('index.php/walikelas');
             }
     function edit($id){
                 $where = array('id' => $id);
-                $data['walikelas'] = $this->m_walikelas->edit_data($where,'walikelas')->result();
+                $data['walikelas'] = $this->M_walikelas->edit_data($where,'walikelas')->result();
                 $this->load->view('template/wrapper');
                 $this->load->view('template/header');
                 $this->load->view('template/navbar');
                 $this->load->view('walikelas/v_edit_walikelas',$data);
     }
     function update(){
-        $id = $this->input->post('id');
         $id_kelas = $this->input->post('id_kelas');
         $id_guru = $this->input->post('id_guru');
         $semester = $this->input->post('semester');
@@ -78,7 +76,7 @@ function tambah(){
         $where = array(
         'id' => $id
         );
-        $this->m_walikelas->update_data($where,$data,'walikelas');
+        $this->M_walikelas->update_data($where,$data,'walikelas');
         redirect('index.php/walikelas');
         }
 }

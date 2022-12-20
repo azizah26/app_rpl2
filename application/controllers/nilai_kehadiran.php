@@ -8,7 +8,7 @@ $this->load->model('M_nilaikehadiran');
 public function index()
 	{
         
-        $semester=$this->db->query('select semester from bagi_tugas group by semester')->result();
+        $semester=$this->db->query('select semester from kehadiran group by semester')->result();
 
        
        

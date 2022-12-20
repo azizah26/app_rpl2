@@ -33,7 +33,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
         <?php
  foreach($kelas as $u){
 
-    echo '<option value="'.$u->nama_kelas.'">'.$u-> nama_kelas.'</option>';
+    echo '<option value="'.$u->id_kelas.'">'.$u-> id_kelas.'</option>';
  }
     ?>
           </select>

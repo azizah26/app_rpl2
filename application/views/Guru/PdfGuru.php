@@ -28,7 +28,7 @@ $no = 1;
 foreach($guru as $u){ ?>
  <tr>
     <td><?php echo $no++ ?></td>
-<td><?php echo $u->nama ?></td>
+<td><?php echo $u->nama_guru ?></td>
 
 <td><?php
 if ($u->jenis_kelamin =="L"){
