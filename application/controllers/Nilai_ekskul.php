@@ -1,71 +1,68 @@
 <?php
-class Nilai_akhir extends CI_Controller{
+class Nilai_ekskul extends CI_Controller{
 function __construct(){
 parent::__construct();
-$this->load->model('M_nilaiakhir');
+$this->load->model('M_nilaiekskul');
 }
 
 public function index()
 	{
-        
-        $semester=$this->db->query('select semester from bagi_tugas group by semester')->result();
-
-       
-       
-        $data ['semester'] = $semester;
-		$this->load->view('v_nilaiakhir',$data);
+    $semester=$this->db->query('select semester from bagi_tugas group by semester')->result();
+    $data ['semester'] = $semester;
+	$this->load->view('v_nilaiekskul',$data);
 	}
-    
 function get_kelas(){
         $semester=$this->input->post('semester');
     $kelas=$this->db->query("select * from bagi_tugas a join kelas b on(a.id_kelas=b.id_kelas)")->result();
     echo json_encode($kelas);
     }
-function get_mapel(){
-    $kelas=$this->input->post('kelas');
-    $mapel=$this->db->query("select * from bagi_tugas a join mapel b on(a.kd_mapel=b.kd_mapel)")->result();
-    echo json_encode($mapel);
-    }
     function get_siswa(){
         $kelas=$this->input->post('kelas');
-    $siswa=$this->db->query("select * from rombel a join siswa b on(a.nis=b.nis) where id_kelas='$kelas'")->result();
-    echo json_encode($siswa);
+        $siswa=$this->db->query("select * from rombel a join siswa b on(a.nis=b.nis) where id_kelas='$kelas'")->result();
+        echo json_encode($siswa);
+        }
+function get_ekskul(){
+    $kelas=$this->input->post('ekskul');
+    $ekskul=$this->db->query("select * from ekskul a join nilai_ekskul b on(a.kd_ekskul=b.kd_ekskul)")->result();
+    echo json_encode($ekskul);
     }
+
 function tambah(){
     $data['kelas'] = $this->M_kelas->get_data()->result();
-    $data['guru'] = $this->M_guru->get_data()->result();
-
 
     $this->load->view('template/wrapper');
     $this->load->view('template/header');
     $this->load->view('template/navbar');
-    $this->load->view('v_tambah_walikelas',$data);
+    $this->load->view('v_tambah_nilaiekskul',$data);
     $this->load->view('template/footer');
     }
     function tambah_aksi(){
         $id = $this->input->post('id');
-        $kd_mapel = $this->input->post('mapel');
-        $semester = $this->input->post('semester');
         $id_kelas = $this->input->post('kelas');
+        $semester = $this->input->post('semester');
+        $id_ekskul = $this->input->post('ekskul');
         $jumlah = $this->input->post('jumlah');
         
         $no=0;
         while($no<$jumlah){
               $nilai = $this->input->post('nilai'.$no);
+              $catatan = $this->input->post('catatan'.$no);
               $nis = $this->input->post('nis'.$no);
+
             $data = array(
-                'kd_mapel' => $kd_mapel,
+                'id_kelas' => $id_kelas,
                 'semester' => $semester,
-                'nilai' => $nilai,
+                'kd_ekskul' => $id_ekskul,
                 'nis' => $nis,
-                'id_kelas' => $id_kelas
+                'nilai' => $nilai,
+                'catatan' => $catatan
                 );
-                $this->M_nilaiakhir->insert_data($data,'nilai_rapot');
+                $this->M_nilaiekskul->insert_data($data,'nilai_ekskul');
                 $no++;
               
         }
         
-        redirect('index.php/Nilai_akhir');
+        redirect('index.php/Nilai_ekskul');
         }
 
     function hapus($id){
