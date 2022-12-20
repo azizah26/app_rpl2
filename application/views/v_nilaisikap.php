@@ -10,16 +10,16 @@ include('template/navbar.php');
 <div class="container">
  <div class="card">
  <div class="card-header text-center">
- <h4>Tambah Data Catatan </h4>
+ <h4>NILAI SIKAP</h4>
  </div>
  <div class="card-body">
- <a href="<?php echo base_url().'index.php/Catatan_walikelas/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
+ <a href="<?php echo base_url().'index.php/sikap/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
  <br/>
  <br/>
- <form method="post" action="<?php echo base_url().'index.php/Catatan_walikelas/tambah_aksi'; ?>">
+ <form method="post" action="<?php echo base_url().'index.php/sikap/tambah_aksi'; ?>">
 
  <div class="form-group">
- <label class="font-weight-bold" for="semester">Semester</label>
+ <label class="font-weight-bold" for="nama">Semester</label>
  <select class="form-control" name="semester" id="semester" aria-label="Default select example">
   <option selected>Pilih Semester </option>
   
@@ -34,12 +34,8 @@ include('template/navbar.php');
  <select class="form-control" name="kelas" id="kelas" aria-label="Default select example">
 </select>
  </div>
-<!-- 
- <div class="form-group">
- <label class="font-weight-bold" for="nama">Mapel</label>
- <select class="form-control" name="mapel" id="mapel" aria-label="Default select example">
-</select>
- </div> -->
+
+
 
  <br>
  <div id="siswa" name="siswa"></div>
@@ -67,7 +63,7 @@ $(document).ready(function(){
         // alert(semester);
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/catatan_walikelas/get_kelas');?>",
+			url:"<?php echo base_url('index.php/sikap/get_kelas');?>",
 			method : "POST",
 			data : {semester: semester},
 			async : true,
@@ -82,17 +78,18 @@ $(document).ready(function(){
 					html += '<option value='+data[i].id_kelas+'>'+data[i].nama_kelas+'</option>';
 				}				
 				$('#kelas').html(html);
-				// $('#kelas').change();
+				$('#kelas').change();
 			}
 		})
 	return false ;
 	});
+
   $('#kelas').change(function(){
 		var semester = $('#semester').val();
     var kelas = $('#kelas').val();
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/catatan_walikelas/get_siswa');?>",
+			url:"<?php echo base_url('index.php/sikap/get_siswa');?>",
 			method : "POST",
 			data : {kelas: kelas},
 			async : true,
@@ -104,11 +101,12 @@ $(document).ready(function(){
 				var i;
 				var no =1;
 
-        html += '<table table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>Nama Siswa</td><td>Catatan Wali</td></tr>';
+        html += '<table table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>Nama Siswa</td><td>Nilai</td><td>Kepribadian</td></tr>';
 
 				for(i=0; i<data.length; i++){
-					html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama+'</td><td><input type="text" class="form-control" name="catatan_wali'+i+'"></td></tr>';
+					html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama+'</td><td><input type="text" class="form-control" name="nilai'+i+'"></td><td><input type="text" class="form-control" name="kepribadian'+i+'"></td></tr>';
 					html+= '<input type="hidden" class="form-control" name="nis'+i+'" value="'+data[i].nis+'">';
+				
 //           html += '<option value='+data[i].kd_mapel+'>'+data[i].nama_mapel+'</option>';
 no++;
 
@@ -116,15 +114,16 @@ no++;
 				html+= '<input type="hidden" class="form-control" name="jumlah" value="'+i+'">';		
 				html +='</table>';		
 				$('#siswa').html(html);
-		
-				//$('#kelas').change();
+				// $('#kelas').change();
 			}
 		})
 	return false ;
 	});
 });
 </script>
-     
+
+
+
 
 
 

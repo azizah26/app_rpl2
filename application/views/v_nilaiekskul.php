@@ -10,7 +10,7 @@ include('template/navbar.php');
 <div class="container">
  <div class="card">
  <div class="card-header text-center">
- <h4>Tambah Data Nilai Akhir </h4>
+ <h4>Tambah Data Nilai Ektrakurikuler </h4>
  </div>
  <div class="card-body">
  <a href="<?php echo base_url().'index.php/Nilai_ekskul/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>

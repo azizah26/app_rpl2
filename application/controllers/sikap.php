@@ -1,8 +1,8 @@
 <?php
-class Catatan_walikelas extends CI_Controller{
+class sikap extends CI_Controller{
 function __construct(){
 parent::__construct();
-$this->load->model('M_catatan');
+$this->load->model('m_sikap');
 }
 
 public function index()
@@ -13,7 +13,7 @@ public function index()
        
        
         $data ['semester'] = $semester;
-		$this->load->view('v_catatan',$data);
+		$this->load->view('v_nilaisikap',$data);
 	}
     
     function get_kelas(){
@@ -21,11 +21,6 @@ public function index()
     $kelas=$this->db->query("select * from bagi_tugas a join kelas b on(a.id_kelas=b.id_kelas)")->result();
     echo json_encode($kelas);
     }
-    // function get_catatan_wali(){
-    //     $kelas=$this->input->post('kelas');
-    // $mapel=$this->db->query("select * from catatan_walikelas a join siswa b on(a.nis=b.nis)")->result();
-    // echo json_encode($mapel);
-    // }
     function get_siswa(){
         $kelas=$this->input->post('kelas');
     $siswa=$this->db->query("select * from rombel a join siswa b on(a.nis=b.nis) where id_kelas='$kelas'")->result();
@@ -33,38 +28,41 @@ public function index()
     }
 function tambah(){
     $data['kelas'] = $this->M_kelas->get_data()->result();
-    // $data['guru'] = $this->M_guru->get_data()->result();
-    $data['siswa'] = $this->M_siswa->get_data()->result();
-
+    $data['guru'] = $this->M_guru->get_data()->result();
+    
 
 
     $this->load->view('template/wrapper');
     $this->load->view('template/header');
     $this->load->view('template/navbar');
-    $this->load->view('v_tambah_siswa',$data);
+    $this->load->view('v_tambah_walikelas',$data);
     $this->load->view('template/footer');
     }
     function tambah_aksi(){
+        $id = $this->input->post('id');
         $semester = $this->input->post('semester');
         $id_kelas = $this->input->post('kelas');
         $jumlah = $this->input->post('jumlah');
         
         $no=0;
         while($no<$jumlah){
-              $catatan_wali = $this->input->post('catatan_wali'.$no);
+              $nilai = $this->input->post('nilai'.$no);
               $nis = $this->input->post('nis'.$no);
+              $kepribadian = $this->input->post('kepribadian'.$no);
+
             $data = array(
                 'semester' => $semester,
-                'catatan_wali' => $catatan_wali,
+                'nilai' => $nilai,
                 'nis' => $nis,
+                'kepribadian' => $kepribadian,
                 'id_kelas' => $id_kelas
                 );
-                $this->M_catatan->insert_data($data,'catatan_walikelas');
+                $this->m_sikap->insert_data($data,'sikap');
                 $no++;
               
         }
         
-        redirect('index.php/catatan_walikelas');
+        redirect('index.php/sikap');
         }
 
     function hapus($id){
