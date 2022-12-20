@@ -86,7 +86,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Nilai Akademik</h6>
                         <a class="collapse-item" href="<?php echo base_url('index.php/nilai_akhir');?>">Nilai Akhir</a>
-                        <a class="collapse-item" href="<?php echo base_url('index.php/jurusan');?>">Nilai Kehadiran</a>
+                        <a class="collapse-item" href="<?php echo base_url('index.php/nilai_kehadiran');?>">Nilai Kehadiran</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/kelas');?>">Nilai Ekskul</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/guru');?>">Nilai Sikap</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/mapel');?>">Nilai Prakerin</a>
