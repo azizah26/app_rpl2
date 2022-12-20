@@ -30,25 +30,25 @@ function tambah(){
         $id = $this->input->post('id');
         $id_setdudi = $this->input->post('id_setdudi');
         $nama_pembimbing = $this->input->post('nama_pembimbing');
-        $nama_jurusan = $this->input->post('nama_jurusan');
+        $jurusan = $this->input->post('jurusan');
         $data = array(
         'id' => $id,
         'id_setdudi' => $id_setdudi,
         'nama_pembimbing' => $nama_pembimbing,
-        'nama_jurusan' => $nama_jurusan
+        'jurusan' => $jurusan
         );
         $this->m_set_dudi->insert_data($data,'set_dudi');
         redirect('index.php/set_dudi');
         }
 
-    function hapus($id){
-            $where = array('id' => $id);
-            $this->m_dudi->delete_data($where,'set_dudi');
+    function hapus($id_setdudi){
+            $where = array('id_setdudi' => $id_setdudi);
+            $this->m_set_dudi->delete_data($where,'set_dudi');
             redirect('index.php/set_dudi');
             }
-    function edit($id){
-                $where = array('id' => $id);
-                $data['set_dudi'] = $this->m_dudi->edit_data($where,'set_dudi')->result();
+    function edit($id_setdudi){
+                $where = array('id_setdudi' => $id_setdudi);
+                $data['set_dudi'] = $this->m_set_dudi->edit_data($where,'set_dudi')->result();
                 $this->load->view('template/wrapper');
                 $this->load->view('template/header');
                 $this->load->view('template/navbar');
@@ -58,16 +58,16 @@ function tambah(){
         $id_setdudi = $this->input->post('id_setdudi');
         $id = $this->input->post('id');
         $nama_pembimbing = $this->input->post('nama_pembimbing');
-        $nama_jurusan = $this->input->post('nama_jurusan');
+        $jurusan = $this->input->post('jurusan');
         $data = array(
         'id' => $id,
         'nama_pembimbing' => $nama_pembimbing,
-        'nama_jurusan' => $nama_jurusan,
+        'jurusan' => $jurusan,
         );
         $where = array(
         'id' => $id
         );
-        $this->m_dudi->update_data($where,$data,'set_dudi');
+        $this->m_set_dudi->update_data($where,$data,'set_dudi');
         redirect('index.php/set_dudi');
         }
 }

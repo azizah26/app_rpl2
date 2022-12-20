@@ -10,7 +10,7 @@ class pdfJurusan extends CI_Controller {
 
     function index()
     {
-        $data['jurusan'] = $this->m_jurusan->tampil_data()->result();
+        $data['jurusan'] = $this->m_jurusan->get_data()->result();
         $this->load->library('pdf');
         $this->load->view('jurusan/v_jurusan',$data);
         $html = $this->load->view('jurusan/pdfJurusan', [], true);

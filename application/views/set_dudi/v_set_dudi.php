@@ -63,7 +63,7 @@ foreach($set_dudi as $u){ ?>
     <td><?php echo $no++ ?></td>
 <td><?php echo $u->id ?></td>
 <td><?php echo $u->nama_pembimbing ?></td>
-<td><?php echo $u->nama_jurusan ?></td>
+<td><?php echo $u->jurusan ?></td>
 <td>
         
 <a href="<?php echo base_url().'index.php/set_dudi/edit/'.$u->id_setdudi; ?>"class="btn btn-sm btn-primary"><i class="fa-solid fa-pen-nib "></i>Edit</a>

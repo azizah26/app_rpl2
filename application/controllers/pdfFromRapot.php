@@ -10,7 +10,7 @@ class pdfFromRapot extends CI_Controller {
 
     function index()
     {
-        $data['from_rapot'] = $this->m_from_rapot->tampil_data()->result();
+        $data['from_rapot'] = $this->m_from_rapot->get_data()->result();
         $this->load->library('pdf');
         $this->load->view('from_rapot/v_from_rapot',$data);
         $html = $this->load->view('from_rapot/pdffrom_rapot', [], true);
