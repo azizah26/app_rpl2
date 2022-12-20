@@ -10,13 +10,13 @@ include('template/navbar.php');
 <div class="container">
  <div class="card">
  <div class="card-header text-center">
- <h4>Tambah Data Catatan </h4>
+ <h4>Tambah Data Prakerin</h4>
  </div>
  <div class="card-body">
- <a href="<?php echo base_url().'index.php/Catatan_walikelas/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
+ <a href="<?php echo base_url().'index.php/Prakerin/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
  <br/>
  <br/>
- <form method="post" action="<?php echo base_url().'index.php/Catatan_walikelas/tambah_aksi'; ?>">
+ <form method="post" action="<?php echo base_url().'index.php/Prakerin/tambah_aksi'; ?>">
 
  <div class="form-group">
  <label class="font-weight-bold" for="semester">Semester</label>
@@ -67,7 +67,7 @@ $(document).ready(function(){
         // alert(semester);
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/catatan_walikelas/get_kelas');?>",
+			url:"<?php echo base_url('index.php/prakerin/get_kelas');?>",
 			method : "POST",
 			data : {semester: semester},
 			async : true,
@@ -92,7 +92,7 @@ $(document).ready(function(){
     var kelas = $('#kelas').val();
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/catatan_walikelas/get_siswa');?>",
+			url:"<?php echo base_url('index.php/prakerin/get_siswa');?>",
 			method : "POST",
 			data : {kelas: kelas},
 			async : true,
@@ -104,7 +104,7 @@ $(document).ready(function(){
 				var i;
 				var no =1;
 
-        html += '<table table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>Nama Siswa</td><td>Catatan Wali</td></tr>';
+        html += '<table table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>Nama Siswa</td><td></td><td>Catatan Wali</td></tr>';
 
 				for(i=0; i<data.length; i++){
 					html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama+'</td><td><input type="text" class="form-control" name="catatan_wali'+i+'"></td></tr>';
@@ -124,7 +124,9 @@ no++;
 	});
 });
 </script>
-     
+
+
+
 
 
 

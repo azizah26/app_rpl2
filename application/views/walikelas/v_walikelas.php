@@ -36,7 +36,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
     <a href="<?php echo base_url('index.php/walikelas/tambah');?>" class='btn btn-sm 
-    btn-primary pull-right'><i class="fas fa-user-plus"></i>Walikelas Baru</a>
+    btn-primary pull-right'><i class="fa-solid fa-notes-medical"></i>Walikelas Baru</a>
     
     <a href="<?php echo base_url('index.php/GeneratePdfController/index');?>" class='btn btn-sm 
     btn-danger pull-right'><i class="fas fa-user-plus"></i>Pdf</a>
@@ -50,7 +50,7 @@
 <th>Kelas</th>
 <th>Guru</th>
 <th>semester</th>
-<th>tapel</th>
+<th>Tapel</th>
 <th>Opsi</th>
 </tr>
 </thead>
@@ -62,10 +62,10 @@ foreach ($walikelas as $u){
 ?>
 <tr>
 <td><?php echo $no++?></td>
-<td><?php echo $u->id_kelas ?></td>
-<td><?php echo $u->id_guru ?></td>
+<td><?php echo $u->nama_kelas ?></td>
+<td><?php echo $u->nama_guru ?></td>
 <td><?php echo $u->semester ?></td>
-
+<td><?php echo $u->tapel ?></td>
 <td>
 <a href="<?php echo base_url().'index.php/walikelas/edit/'.$u->id; ?>" 
 class="btn btn-sm btn-warning"><i class="fas fa-user-edit"></i> Edit</a>
@@ -84,10 +84,3 @@ class="btn btn-sm btn-success"><i class="fa fa-trash"></i> Hapus</a>
 
 </div>
 <!-- End of Main Content -->
-
-
-</div>
-<!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
