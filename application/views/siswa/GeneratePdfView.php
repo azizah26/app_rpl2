@@ -4,15 +4,15 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta charset="utf-8">
     <title>Pdf Siswa</title>
-<center><h1>DATA SISWA</h1></center>
-
+<center><h1>Data Siswa</h1></center>
 <div class="card-body">
         <div class="table-responsive">
-        <table class="table table-striped" border="1">
+        <table class="table table-striped" border="1" id="dataTable" width="100%">
             <thead class="bg-secondary text-light">
                 <thead>
+
 <tr>
-<th width="1%">No</th>
+<th>No</th>
 <th>Nis</th>
 <th>Nisn</th>
 <th>Nama</th>
