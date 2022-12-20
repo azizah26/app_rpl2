@@ -10,13 +10,13 @@ include('template/navbar.php');
 <div class="container">
  <div class="card">
  <div class="card-header text-center">
- <h4>Tambah Data Nilai Ektrakurikuler </h4>
+ <h4>Nilai Ekskul</h4>
  </div>
  <div class="card-body">
- <a href="<?php echo base_url().'index.php/Nilai_ekskul/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
+ <a href="<?php echo base_url().'index.php/nilai_ekskul/' ?>" class='btn btn-sm btn-light btn-outline-dark pull-right'><i class="fa fa-arrow-left"></i> Kembali</a>
  <br/>
  <br/>
- <form method="post" action="<?php echo base_url().'index.php/Nilai_ekskul/tambah_aksi'; ?>">
+ <form method="post" action="<?php echo base_url().'index.php/nilai_ekskul/tambah_aksi'; ?>">
 
  <div class="form-group">
  <label class="font-weight-bold" for="nama">Semester</label>
@@ -36,7 +36,7 @@ include('template/navbar.php');
  </div>
 
  <div class="form-group">
- <label class="font-weight-bold" for="nama">Nama Ekstrakurikuler</label>
+ <label class="font-weight-bold" for="nama">Ekstrakulikuler</label>
  <select class="form-control" name="ekskul" id="ekskul" aria-label="Default select example">
 </select>
  </div>
@@ -67,7 +67,7 @@ $(document).ready(function(){
         // alert(semester);
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/Nilai_ekskul/get_kelas');?>",
+			url:"<?php echo base_url('index.php/nilai_ekskul/get_kelas');?>",
 			method : "POST",
 			data : {semester: semester},
 			async : true,
@@ -82,7 +82,7 @@ $(document).ready(function(){
 					html += '<option value='+data[i].id_kelas+'>'+data[i].nama_kelas+'</option>';
 				}				
 				$('#kelas').html(html);
-				//$('#kelas').change();
+				$('#kelas').change();
 			}
 		})
 	return false ;
@@ -92,7 +92,7 @@ $(document).ready(function(){
     var kelas = $('#kelas').val();
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/Nilai_ekskul/get_ekskul');?>",
+			url:"<?php echo base_url('index.php/nilai_ekskul/get_ekskul');?>",
 			method : "POST",
 			data : {kelas: kelas},
 			async : true,
@@ -104,7 +104,7 @@ $(document).ready(function(){
 				var i;
                 html += '<option value=>pilih ekskul</option>';
 				for(i=0; i<data.length; i++){
-					html += '<option value='+data[i].id_ekskul+'>'+data[i].nama_ekskul+'</option>';
+					html += '<option value='+data[i].kd_ekskul+'>'+data[i].nama_ekskul+'</option>';
 				}				
 				$('#ekskul').html(html);
 				//$('#kelas').change();
@@ -112,14 +112,13 @@ $(document).ready(function(){
 		})
 	return false ;
 	});
-	
   $('#ekskul').change(function(){
 		var semester = $('#semester').val();
     var kelas = $('#kelas').val();
     var ekskul = $('#ekskul').val();
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/Nilai_ekskul/get_siswa');?>",
+			url:"<?php echo base_url('index.php/nilai_ekskul/get_siswa');?>",
 			method : "POST",
 			data : {kelas: kelas},
 			async : true,
@@ -130,6 +129,7 @@ $(document).ready(function(){
 				var html = '';
 				var i;
 				var no =1;
+
 
         html += '<table table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>Nama Siswa</td><td>Nilai</td><td>Catatan</td></tr>';
 

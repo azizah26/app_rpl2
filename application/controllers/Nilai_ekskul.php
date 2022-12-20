@@ -16,16 +16,16 @@ function get_kelas(){
     $kelas=$this->db->query("select * from bagi_tugas a join kelas b on(a.id_kelas=b.id_kelas)")->result();
     echo json_encode($kelas);
     }
+function get_ekskul(){
+    $kelas=$this->input->post('ekskul');
+    $ekskul=$this->db->query("select * from ekskul a join pembina_ekskul b on(a.id_ekskul=b.id_ekskul)")->result();
+    echo json_encode($ekskul);
+    }
     function get_siswa(){
         $kelas=$this->input->post('kelas');
         $siswa=$this->db->query("select * from rombel a join siswa b on(a.nis=b.nis) where id_kelas='$kelas'")->result();
         echo json_encode($siswa);
         }
-function get_ekskul(){
-    $kelas=$this->input->post('ekskul');
-    $ekskul=$this->db->query("select * from ekskul a join nilai_ekskul b on(a.kd_ekskul=b.kd_ekskul)")->result();
-    echo json_encode($ekskul);
-    }
 
 function tambah(){
     $data['kelas'] = $this->M_kelas->get_data()->result();
