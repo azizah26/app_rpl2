@@ -10,7 +10,7 @@ function __construct(){
 
     function index()
     {
-        $data['mapel'] = $this->m_mapel->tampil_data()->result();
+        $data['mapel'] = $this->m_mapel->get_data()->result();
         $this->load->library('pdf');
         $this->load->view('Mapel/v_mapel',$data);
         $html = $this->load->view('Mapel/generatePdfView', [], true);

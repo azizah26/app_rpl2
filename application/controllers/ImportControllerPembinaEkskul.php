@@ -10,9 +10,15 @@ class ImportControllerPembinaEkskul extends CI_Controller {
 
 	public function index()
 	{
+<<<<<<< HEAD
 		$this->load->model('ImportModelPembinaEkskul');
 		$data = array(
 			'list_data'	=> $this->ImportModelPembinaEkskul->getData()
+=======
+		$this->load->model('M_ImportPembinaEkskul');
+		$data = array(
+			'list_data'	=> $this->M_ImportPembinaEkskul->getData()
+>>>>>>> 1236b331327ed98465815bce75c620c4c97c857e
 		);
 		$this->load->view('import_excel.php',$data);
 	}
@@ -27,6 +33,7 @@ class ImportControllerPembinaEkskul extends CI_Controller {
 				$highestColumn = $worksheet->getHighestColumn();	
 				for($row=2; $row<=$highestRow; $row++)
 				{
+<<<<<<< HEAD
 					$kd_ekskul = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
 					$nama_pembina = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
                     $semester = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
@@ -39,6 +46,20 @@ class ImportControllerPembinaEkskul extends CI_Controller {
 			}
 			$this->load->model('ImportModelPembinaEkskul');
 			$insert = $this->ImportModelPembinaEkskul->insert($temp_data);
+=======
+					$id_ekskul = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+					$nama_pembina = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+					$semester = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+					$temp_data[] = array(
+						'id_ekskul'	=> $id_ekskul,
+						'nama_pembina'	=> $nama_pembina,
+						'semester'	=> $semester,
+					); 	
+				}
+			}
+			$this->load->model('M_ImportPembinaEkskul');
+			$insert = $this->M_ImportPembinaEkskul->insert($temp_data);
+>>>>>>> 1236b331327ed98465815bce75c620c4c97c857e
 			if($insert){
 				$this->session->set_flashdata('status', '<span class="glyphicon glyphicon-ok"></span> Data Berhasil di Import ke Database');
 				redirect($_SERVER['HTTP_REFERER']);

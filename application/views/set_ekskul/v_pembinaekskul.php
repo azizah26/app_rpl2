@@ -11,7 +11,11 @@
 			<?php if(!empty($this->session->flashdata('status'))){ ?>
 			<div class="alert alert-info" role="alert"><?= $this->session->flashdata('status'); ?></div>
 			<?php } ?>
+<<<<<<< HEAD
 			<form action="<?= base_url('index.php/ImportControllerPembinaEkskul/Import_excel'); ?>" method="post" enctype="multipart/form-data">
+=======
+			<form action="<?= base_url('index.php/ImportControllerPembinaEkskul/import_excel'); ?>" method="post" enctype="multipart/form-data">
+>>>>>>> 1236b331327ed98465815bce75c620c4c97c857e
 				<div class="form-group">
 					<label>Pilih File Excel</label>
 					<input type="file" name="fileExcel">
