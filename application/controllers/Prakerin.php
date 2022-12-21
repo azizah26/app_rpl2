@@ -55,7 +55,7 @@ function tambah(){
                 'semester' => $semester,
                 'nis' => $nis,
                 'nama_dudi' => $nama_dudi,
-                'jurusan' => $jurusan,
+                'nama_jurusan' => $jurusan,
                 'komponen_nilai' => $komponen_nilai,
                 );
                 $this->M_nilaiprakerin->insert_data($data,'prakerin');
