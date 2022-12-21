@@ -132,7 +132,7 @@ $(document).ready(function(){
         html += '<table table class="table table-bordered  table-hover table-default" id="dataTable" width="100%" cellspacing="0"> <tr><td>No</td><td>Nis</td><td>Nama Siswa</td><td>Nama Jurusan</td><td>Nama Dudi</td><td>Komponen Nilai</td></tr>';
 
 				for(i=0; i<data.length; i++){
-					html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama+'</td><td><input type="text" class="form-control" name="jurusan'+i+'"></td>><td><input type="text" class="form-control" name="nama_dudi'+i+'"></td><td><input type="text" class="form-control" name="komponen_nilai'+i+'"></td></tr>';
+					html += '<tr><td>'+no+'</td><td>'+data[i].nis+'</td><td>'+data[i].nama+'</td><td><input type="text" class="form-control" name="jurusan'+i+'"></td><td><input type="text" class="form-control" name="nama_dudi'+i+'"></td><td><input type="text" class="form-control" name="komponen_nilai'+i+'"></td></tr>';
 					html+= '<input type="hidden" class="form-control" name="nis'+i+'" value="'+data[i].nis+'">';
 //           html += '<option value='+data[i].kd_mapel+'>'+data[i].nama_mapel+'</option>';
 no++;

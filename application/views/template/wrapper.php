@@ -7,7 +7,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/app_rpltwo/">
             <div class="sidebar-brand-icon rotate-n-15">
             <i class="fa-solid fa-desktop"></i>
                 </div>

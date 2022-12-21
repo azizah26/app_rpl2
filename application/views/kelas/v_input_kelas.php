@@ -29,7 +29,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
      
     <label class="font-weight-bold" for="tingkat_kelas">Tingkat</label><br>
         <select id="tingkat_kelas" name="tingkat_kelas" required>
-        <option selected>Pilih Tingkat </option>
+        <option value="">--Pilih Tingkat--</option>
   <option value="10">10</option>
   <option value="11">11 </option>
   <option value="12">12</option>
@@ -38,7 +38,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
          
         <label class="font-weight-bold" for="jurusan">Jurusan</label><br>
         <select id="jurusan" name="jurusan" required>
-        <option selected>Pilih Jurusan </option>
+        <option value="">--Pilih Jurusan--</option>
         <?php
  foreach($jurusan as $j){
 

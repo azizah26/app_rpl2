@@ -18,7 +18,7 @@ function get_kelas(){
     }
 function get_ekskul(){
     $kelas=$this->input->post('ekskul');
-    $ekskul=$this->db->query("select * from ekskul a join pembina_ekskul b on(a.id_ekskul=b.id_ekskul)")->result();
+    $ekskul=$this->db->query("select * from pembina_ekskul a join ekskul b on(a.id_ekskul=b.id_ekskul)")->result();
     echo json_encode($ekskul);
     }
     function get_siswa(){

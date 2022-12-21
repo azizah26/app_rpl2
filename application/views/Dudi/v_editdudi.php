@@ -65,11 +65,6 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
 </div>
 
-<div class="container" style="background-color:#f1f1f1">
-<a href=/app_rpl2/index.php/guru>  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></a>
-  
-  
-</div>
    
     
   </form>

@@ -23,7 +23,7 @@ include('template/navbar.php');
  <select class="form-control" name="semester" id="semester" aria-label="Default select example">
   <option selected>Pilih Semester </option>
   
-<?php foreach ($semester as $j) {
+  <?php foreach ($semester as $j) {
     echo '<option value="' . $j->semester . '">' . $j->semester. '</option>';
 } ?>
 </select>
@@ -34,7 +34,12 @@ include('template/navbar.php');
  <select class="form-control" name="kelas" id="kelas" aria-label="Default select example">
 </select>
  </div>
-
+<!-- 
+ <div class="form-group">
+ <label class="font-weight-bold" for="nama">Mapel</label>
+ <select class="form-control" name="mapel" id="mapel" aria-label="Default select example">
+</select>
+ </div> -->
 
  <br>
  <div id="siswa" name="siswa"></div>
@@ -62,7 +67,7 @@ $(document).ready(function(){
         // alert(semester);
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/nilai_kehadiran/get_kelas');?>",
+			url:"<?php echo base_url('index.php/catatan_walikelas/get_kelas');?>",
 			method : "POST",
 			data : {semester: semester},
 			async : true,
@@ -77,18 +82,17 @@ $(document).ready(function(){
 					html += '<option value='+data[i].id_kelas+'>'+data[i].nama_kelas+'</option>';
 				}				
 				$('#kelas').html(html);
-				$('#kelas').change();
+				// $('#kelas').change();
 			}
 		})
 	return false ;
 	});
-  
   $('#kelas').change(function(){
 		var semester = $('#semester').val();
     var kelas = $('#kelas').val();
 		
 		$.ajax({
-			url:"<?php echo base_url('index.php/nilai_kehadiran/get_siswa');?>",
+			url:"<?php echo base_url('index.php/catatan_walikelas/get_siswa');?>",
 			method : "POST",
 			data : {kelas: kelas},
 			async : true,

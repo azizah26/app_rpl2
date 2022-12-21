@@ -42,15 +42,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
       
       <button type="submit" class="btnkirim">Kirim</button>
    
-
-
-
-    <div class="container" style="background-color:#f1f1f1">
-    <a href=/app_rpl2/index.php/dudi>  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button></a>
-      
-
-      
-    </div>
+      </div>
   </form>
 </div>
 
