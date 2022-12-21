@@ -1,8 +1,8 @@
 <?php
-class Prakerin extends CI_Controller{
+class prakerin extends CI_Controller{
 function __construct(){
 parent::__construct();
-$this->load->model('M_prakerin');
+$this->load->model('M_nilaiprakerin');
 }
 
 public function index()
@@ -10,22 +10,20 @@ public function index()
         
         $semester=$this->db->query('select semester from bagi_tugas group by semester')->result();
 
-       
-       
         $data ['semester'] = $semester;
-		$this->load->view('v_catatan',$data);
+		$this->load->view('v_nilaiprakerin',$data);
 	}
-    
+
     function get_kelas(){
         $semester=$this->input->post('semester');
-    $kelas=$this->db->query("select * from bagi_tugas a join kelas b on(a.id_kelas=b.id_kelas)")->result();
+    $kelas=$this->db->query("select * from bagi_tugas a join kelas b on(a.id_kelas=b.id_kelas) ")->result();
     echo json_encode($kelas);
     }
-    // function get_catatan_wali(){
-    //     $kelas=$this->input->post('kelas');
-    // $mapel=$this->db->query("select * from catatan_walikelas a join siswa b on(a.nis=b.nis)")->result();
-    // echo json_encode($mapel);
-    // }
+    function get_jurusan(){
+        $kelas=$this->input->post('kelas');
+    $kelas=$this->db->query("select * from kelas a join prakerin b on(a.jurusan=b.jurusan)")->result();
+    echo json_encode($kelas);
+    }
     function get_siswa(){
         $kelas=$this->input->post('kelas');
     $siswa=$this->db->query("select * from rombel a join siswa b on(a.nis=b.nis) where id_kelas='$kelas'")->result();
@@ -33,38 +31,39 @@ public function index()
     }
 function tambah(){
     $data['kelas'] = $this->M_kelas->get_data()->result();
-    // $data['guru'] = $this->M_guru->get_data()->result();
-    $data['siswa'] = $this->M_siswa->get_data()->result();
-
-
 
     $this->load->view('template/wrapper');
     $this->load->view('template/header');
     $this->load->view('template/navbar');
-    $this->load->view('v_tambah_siswa',$data);
+    $this->load->view('v_tambah_walikelas',$data);
     $this->load->view('template/footer');
     }
     function tambah_aksi(){
+        $id = $this->input->post('id');
         $semester = $this->input->post('semester');
         $id_kelas = $this->input->post('kelas');
         $jumlah = $this->input->post('jumlah');
         
         $no=0;
         while($no<$jumlah){
-              $catatan_wali = $this->input->post('catatan_wali'.$no);
               $nis = $this->input->post('nis'.$no);
+              $nama_dudi = $this->input->post('nama_dudi'.$no);
+              $jurusan = $this->input->post('jurusan'.$no);
+              $komponen_nilai = $this->input->post('komponen_nilai'.$no);
             $data = array(
+                'id_kelas' => $id_kelas,
                 'semester' => $semester,
-                'catatan_wali' => $catatan_wali,
                 'nis' => $nis,
-                'id_kelas' => $id_kelas
+                'nama_dudi' => $nama_dudi,
+                'jurusan' => $jurusan,
+                'komponen_nilai' => $komponen_nilai,
                 );
-                $this->M_catatan->insert_data($data,'catatan_walikelas');
+                $this->M_nilaiprakerin->insert_data($data,'prakerin');
                 $no++;
               
         }
         
-        redirect('index.php/catatan_walikelas');
+        redirect('index.php/prakerin');
         }
 
     function hapus($id){
