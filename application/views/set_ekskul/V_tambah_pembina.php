@@ -26,12 +26,12 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
       <hr>
   
-      <label for="id_ekskul"><b>Nama Ekskul</b></label>
- <select class="form-control" name="id_ekskul" aria-label="Default select example">
+      <label for="id_ekskul"><b>NAMA Ekskul</b></label>
+ <select class="form-control" name="kd_ekskul" aria-label="Default select example">
  <option value="">--Pilih Ekskul--</option>
   <?php
   foreach($ekskul as $j){
-    echo '<option value="'.$j->id_ekskul.'">'.$j->nama_ekskul.'</option>';
+    echo '<option value="'.$j->kd_ekskul.'">'.$j->nama_ekskul.'</option>';
   }
   ?>
 </select>

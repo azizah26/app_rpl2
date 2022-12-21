@@ -17,7 +17,7 @@
 			<?php if(!empty($this->session->flashdata('status'))){ ?>
 			<div class="alert alert-info" role="alert"><?= $this->session->flashdata('status'); ?></div>
 			<?php } ?>
-			<form action="<?= base_url('index.php/Excel/upload'); ?>" method="post" enctype="multipart/form-data">
+			<form action="<?= base_url('index.php/ImportControllerEkskul/import_excel'); ?>" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label>Pilih File Excel</label>
 					<input type="file" name="fileExcel">
@@ -42,7 +42,7 @@
     <a href="<?php echo base_url('index.php/ekskul/tambah');?>" class='btn btn-sm 
     btn-primary pull-right'><i class="fa-solid fa-notes-medical"></i>Ekskul Baru</a>
     
-    <a href="<?php echo base_url('index.php/ControllerPdfGuru/index');?>" target="_blank" class='btn btn-sm 
+    <a href="<?php echo base_url('index.php/ControllerPdfEkskul/index');?>" target="_blank" class='btn btn-sm 
     btn-info pull-right'><i class="fas fa-user-plus"></i>Pdf</a>
    
    <br><br>

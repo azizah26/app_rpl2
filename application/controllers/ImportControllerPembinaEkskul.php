@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ImportControllerJurusan extends CI_Controller {
+class ImportControllerPembinaEkskul extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -10,9 +10,9 @@ class ImportControllerJurusan extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->model('ImportModelJurusan');
+		$this->load->model('ImportModelPembinaEkskul');
 		$data = array(
-			'list_data'	=> $this->ImportModelJurusan->getData()
+			'list_data'	=> $this->ImportModelPembinaEkskul->getData()
 		);
 		$this->load->view('import_excel.php',$data);
 	}
@@ -27,17 +27,18 @@ class ImportControllerJurusan extends CI_Controller {
 				$highestColumn = $worksheet->getHighestColumn();	
 				for($row=2; $row<=$highestRow; $row++)
 				{
-					$kd_jurusan = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-					$nama_jurusan = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
-					
+					$kd_ekskul = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+					$nama_pembina = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+                    $semester = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
 					$temp_data[] = array(
-						'kd_jurusan'	=> $kd_jurusan,
-						'nama_jurusan'	=> $nama_jurusan,
+						'kd_ekskul'	=> $kd_ekskul,
+						'nama_pembina'	=> $nama_pembina,
+                        'semester'	=> $semester,
 					); 	
 				}
 			}
-			$this->load->model('ImportModelJurusan');
-			$insert = $this->ImportModelJurusan->insert($temp_data);
+			$this->load->model('ImportModelPembinaEkskul');
+			$insert = $this->ImportModelPembinaEkskul->insert($temp_data);
 			if($insert){
 				$this->session->set_flashdata('status', '<span class="glyphicon glyphicon-ok"></span> Data Berhasil di Import ke Database');
 				redirect($_SERVER['HTTP_REFERER']);

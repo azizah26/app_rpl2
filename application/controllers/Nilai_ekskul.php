@@ -18,7 +18,7 @@ function get_kelas(){
     }
 function get_ekskul(){
     $kelas=$this->input->post('ekskul');
-    $ekskul=$this->db->query("select * from pembina_ekskul a join ekskul b on(a.id_ekskul=b.id_ekskul)")->result();
+    $ekskul=$this->db->query("select * from pembina_ekskul a join ekskul b on(a.kd_ekskul=b.kd_ekskul)")->result();
     echo json_encode($ekskul);
     }
     function get_siswa(){
@@ -40,7 +40,7 @@ function tambah(){
         $id = $this->input->post('id');
         $id_kelas = $this->input->post('kelas');
         $semester = $this->input->post('semester');
-        $id_ekskul = $this->input->post('ekskul');
+        $kd_ekskul = $this->input->post('ekskul');
         $jumlah = $this->input->post('jumlah');
         
         $no=0;
@@ -52,7 +52,7 @@ function tambah(){
             $data = array(
                 'id_kelas' => $id_kelas,
                 'semester' => $semester,
-                'kd_ekskul' => $id_ekskul,
+                'kd_ekskul' => $kd_ekskul,
                 'nis' => $nis,
                 'nilai' => $nilai,
                 'catatan' => $catatan
