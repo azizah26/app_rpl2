@@ -7,7 +7,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/app_rpltwo/">
             <div class="sidebar-brand-icon rotate-n-15">
             <i class="fa-solid fa-desktop"></i>
                 </div>
@@ -88,7 +88,7 @@
                         <a class="collapse-item" href="<?php echo base_url('index.php/nilai_akhir');?>">Nilai Akhir</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/nilai_kehadiran');?>">Nilai Kehadiran</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/Nilai_ekskul');?>">Nilai Ekskul</a>
-                        <a class="collapse-item" href="<?php echo base_url('index.php/guru');?>">Nilai Sikap</a>
+                        <a class="collapse-item" href="<?php echo base_url('index.php/sikap');?>">Nilai Sikap</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/prakerin');?>">Nilai Prakerin</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/catatan_walikelas');?>">Catatan Walikelas</a>
                     </div>
