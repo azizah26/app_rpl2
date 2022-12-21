@@ -27,7 +27,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
     
     <label for="id"><b>ID Dudi</b></label><br>
         <select id='id' name="id">
-        <option selected>Pilih Id Dudi </option>
+        <option value="">--Pilih Id--</option>
         <?php
  foreach($dudi as $u){
 
@@ -39,7 +39,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
 <label class="font-weight-bold" for="nama_pembimbing">Pembimbing</label><br>
         <select id="nama_pembimbing" name="nama_pembimbing" required>
-        <option selected>Pilih Pembimbing </option>
+        <option value="">--Pilih Pembimbing--</option>
         <?php
  foreach($dudi as $u){
 
@@ -51,7 +51,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
 <label class="font-weight-bold" for="jurusan">Jurusan</label><br>
         <select id="jurusan" name="jurusan" required>
-        <option selected>Pilih Jurusan </option>
+        <option value="">--Pilih Jurusan--</option>
         <?php
  foreach($kelas as $u){
 

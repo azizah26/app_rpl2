@@ -24,7 +24,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
     <label for="kd_mapel"><b>Nama Mapel</b></label>
  <select class="form-control" name="kd_mapel" aria-label="Default select example">
- <option value=""> Pilih Mapel</option>
+ <option value="">--Pilih Mapel--</option>
   <?php
   foreach($mapel as $a){
     echo '<option value="'.$a->nama_mapel.'">'.$a->nama_mapel.'</option>';
@@ -34,7 +34,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
 <label for="guru_mapel"><b>Nama Guru</b></label>
  <select class="form-control" name="guru_mapel" aria-label="Default select example">
- <option value="">Pilih Guru</option>
+ <option value="">--Pilih Guru--</option>
   <?php
   foreach($guru as $u){
     echo '<option value="'.$u->nama_guru.'">'.$u->nama_guru.'</option>';
@@ -44,7 +44,7 @@ href="http://localhost/app_rpltwo/assets/css/select.css">
 
     <label for="id_kelas"><b>Nama Kelas</b></label>
  <select class="form-control" name="id_kelas" aria-label="Default select example">
- <option value="">Pilih kelas</option>
+ <option value="">--Pilih kelas--</option>
   <?php
   foreach($kelas as $u){
     echo '<option value="'.$u->nama_kelas.'">'.$u->nama_kelas.'</option>';
