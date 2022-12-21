@@ -88,7 +88,7 @@
                         <a class="collapse-item" href="<?php echo base_url('index.php/nilai_akhir');?>">Nilai Akhir</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/nilai_kehadiran');?>">Nilai Kehadiran</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/Nilai_ekskul');?>">Nilai Ekskul</a>
-                        <a class="collapse-item" href="<?php echo base_url('index.php/guru');?>">Nilai Sikap</a>
+                        <a class="collapse-item" href="<?php echo base_url('index.php/sikap');?>">Nilai Sikap</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/prakerin');?>">Nilai Prakerin</a>
                         <a class="collapse-item" href="<?php echo base_url('index.php/catatan_walikelas');?>">Catatan Walikelas</a>
                     </div>
