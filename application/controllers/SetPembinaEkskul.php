@@ -9,12 +9,12 @@ $this->load->model('M_ekskul');
 public function index()
 	{
         $this->load->view('template/header');
-        $ekskul=$this->db->query('select * from pembina_ekskul a join ekskul b on(a.kd_ekskul=b.kd_ekskul)')->result();
+        $ekskul=$this->db->query('select * from pembina_ekskul a join ekskul b on(a.id_ekskul=b.id_ekskul)')->result();
         
         $this->load->view('template/wrapper');
         $this->load->view('template/navbar');
        
-        $data ['pembinaekskul'] = $ekskul;
+        $data ['ekskul'] = $ekskul;
 		$this->load->view('set_ekskul/v_pembinaekskul',$data);
         $this->load->view('template/footer');
 	}
@@ -27,11 +27,11 @@ function tambah(){
     $this->load->view('template/footer');
     }
     function tambah_aksi(){
-        $kd_ekskul = $this->input->post('kd_ekskul');
+        $id_ekskul = $this->input->post('id_ekskul');
         $nama_pembina = $this->input->post('nama_pembina');
         $semester = $this->input->post('semester');
         $data = array(
-        'kd_ekskul' => $kd_ekskul,
+        'id_ekskul' => $id_ekskul,
         'nama_pembina' => $nama_pembina,
         'semester' => $semester
         );
@@ -54,11 +54,11 @@ function tambah(){
     }
     function update(){
         $id = $this->input->post('id');
-        $kd_ekskul = $this->input->post('kd_ekskul');
+        $id_ekskul = $this->input->post('id_ekskul');
         $nama_pembina = $this->input->post('nama_pembina');
         $semester = $this->input->post('semester');
         $data = array(
-        'kd_ekskul' => $kd_ekskul,
+        'id_ekskul' => $id_ekskul,
         'nama_pembina' => $nama_pembina,
         'semester' => $semester
         );

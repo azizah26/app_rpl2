@@ -16,7 +16,7 @@ $no = 1;
 foreach($pembinaekskul as $p){ ?>
  <tr>
  <td><?php echo $no++ ?></td>
-<td><?php echo $p->kd_ekskul ?></td>
+<td><?php echo $p->id_ekskul ?></td>
 <td><?php echo $p->nama_pembina ?></td>
 <td><?php echo $p->semester ?></td>
 </tr>
