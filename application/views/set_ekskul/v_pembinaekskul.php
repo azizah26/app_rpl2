@@ -11,7 +11,7 @@
 			<?php if(!empty($this->session->flashdata('status'))){ ?>
 			<div class="alert alert-info" role="alert"><?= $this->session->flashdata('status'); ?></div>
 			<?php } ?>
-			<form action="<?= base_url('index.php/Excel/upload'); ?>" method="post" enctype="multipart/form-data">
+			<form action="<?= base_url('index.php/ImportControllerPembinaEkskul/import_excel'); ?>" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label>Pilih File Excel</label>
 					<input type="file" name="fileExcel">
