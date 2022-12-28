@@ -8,6 +8,15 @@ class M_siswa extends CI_Model{
 function get_data(){
 return $this->db->get('siswa');
 }
+
+public function ambil_data($keyword=null){
+    $this->db->select('*');
+    $this->db->from('siswa');
+    if(!empty($keyword)){
+        $this->db->like('nama',$keyword);
+    }
+    return $this->db->get()->result_array();
+}
 // fungsi untuk menginput data ke database
 function insert_data($data,$table){
 $this->db->insert($table,$data);

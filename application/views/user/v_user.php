@@ -60,12 +60,12 @@ foreach ($user as $u){
 ?>
 <tr>
 <td><?php echo $no++?></td>
-<td><?php echo $u->nama_user ?></td>
+<td><?php echo $u->username ?></td>
 <td><?php echo $u->level ?></td>
 <td>
-<a href="<?php echo base_url().'index.php/user/edit/'.$u->id_user; ?>" 
+<a href="<?php echo base_url().'index.php/user/edit/'.$u->id; ?>" 
 class="btn btn-sm btn-warning"><i class="fas fa-user-edit"></i> Edit</a>
-<a href="<?php echo base_url().'index.php/user/hapus/'.$u->id_user; ?>" 
+<a href="<?php echo base_url().'index.php/user/hapus/'.$u->id; ?>" 
 class="btn btn-sm btn-success"><i class="fa fa-trash"></i> Hapus</a>
 </td>
 </tr>

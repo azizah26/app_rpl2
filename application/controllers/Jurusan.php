@@ -24,13 +24,19 @@ class Jurusan extends CI_Controller {
 	 */
 	public function index()
 	{
-		
+		$this->load->model('M_jurusan');
+		$keyword = $this->input->get('keyword');
+		$data = $this->M_jurusan->ambil_data($keyword);
+		$data = array(
+			'keyword'	=> $keyword,
+			'data'		=> $data
+		);
+
         $this->load->view('template/header');
-        $this->load->view('template/wrapper');
         $this->load->view('template/navbar');
        
         $data['jurusan'] = $this->M_jurusan->get_data()->result();
-		$this->load->view('jurusan/v_jurusan',$data);
+		$this->load->view('jurusan/v_jurusann',$data);
         $this->load->view('template/footer');
 	}
 	function tambah(){

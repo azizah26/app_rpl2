@@ -6,7 +6,7 @@ class M_user extends CI_Model{
 // FUNGSI CRUD
 // fungsi untuk mengambil data dari database
 function get_data(){
-return $this->db->get('set_user');
+return $this->db->get('user');
 }
 // fungsi untuk menginput data ke database
 function insert_data($data,$table){

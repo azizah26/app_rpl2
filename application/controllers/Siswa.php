@@ -24,13 +24,19 @@ $this->load->helper('url');
 	 */
 	public function index()
 	{
-		$data['siswa'] = $this->m_siswa->get_data('siswa')->result();
+		$this->load->model('M_siswa');
+		$keyword = $this->input->get('keyword');
+		$data = $this->M_siswa->ambil_data($keyword);
+		$data = array(
+			'keyword'	=> $keyword,
+			'data'		=> $data
+		);
+
         $this->load->view('template/header');
-        $this->load->view('template/wrapper');
         $this->load->view('template/navbar');
        
-        
-		$this->load->view('siswa/v_siswa',$data);
+        $data['siswa'] = $this->M_siswa->get_data()->result();
+		$this->load->view('siswa/v_siswaa',$data);
         $this->load->view('template/footer');
 	}
 	
